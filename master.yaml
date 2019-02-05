@@ -14,6 +14,12 @@ Description: >
   Last Modified: 22nd September 2016
   Author: Paul Maddox <pmaddox@amazon.com>
 
+Parameters:
+
+    siteEnvKey:
+        Description: The key to deploy for the container
+        Type: String
+        
 Resources:
   VPC:
     Type: AWS::CloudFormation::Stack
