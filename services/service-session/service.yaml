@@ -48,7 +48,7 @@ Resources:
             DesiredCount: !Ref DesiredCount
             TaskDefinition: !Ref TaskDefinition
             LoadBalancers: 
-                - ContainerName: !Join ["-",["service-epc", !Ref ContainerKey ]]
+                - ContainerName: !Join ["-",["service-session", !Ref ContainerKey ]]
                   ContainerPort: 8080
                   TargetGroupArn: !Ref TargetGroup
 
