@@ -14,11 +14,11 @@ Description: >
   Last Modified: 22nd September 2016
   Author: Paul Maddox <pmaddox@amazon.com>
 
-Parameters:
+#Parameters:
 
-    siteEnvKey:
-        Description: The key to deploy for the container
-        Type: String
+#    siteEnvKey:
+#        Description: The key to deploy for the container
+#        Type: String
         
 Resources:
   VPC:
