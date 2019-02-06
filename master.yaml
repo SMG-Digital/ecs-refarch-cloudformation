@@ -58,35 +58,10 @@ Resources:
       Parameters:
         EnvironmentName: !Ref AWS::StackName
         InstanceType: t2.large
-        ClusterSize: 4
+        ClusterSize: 3
         VPC: !GetAtt VPC.Outputs.VPC
         SecurityGroup: !GetAtt SecurityGroups.Outputs.ECSHostSecurityGroup
         Subnets: !GetAtt VPC.Outputs.PrivateSubnets
-
-#  ProductService:
-#    Type: AWS::CloudFormation::Stack
-#    Properties:
-#      TemplateURL: !Join ["",["https://s3.amazonaws.com/smg-ops/cloudformation/session-infra/", !Ref siteEnvKey, "/services/product-service/service.yaml"]]
-#      Parameters:
-#        VPC: !GetAtt VPC.Outputs.VPC
-#        Cluster: !GetAtt ECS.Outputs.Cluster
-#        DesiredCount: 2
-#        Listener: !GetAtt ALB.Outputs.Listener
-#        Path: /products
-
-#  WebsiteService:
-#    Type: AWS::CloudFormation::Stack
-#    Properties:
-#      TemplateURL: !Join ["",["https://s3.amazonaws.com/smg-ops/cloudformation/session-infra/", !Ref siteEnvKey, "/services/website-service/service.yaml"]]
-#      Parameters:
-#        VPC: !GetAtt VPC.Outputs.VPC
-#        Cluster: !GetAtt ECS.Outputs.Cluster
-#        DesiredCount: 2
-#        ProductServiceUrl:
-#          !Join ["/", [!GetAtt ALB.Outputs.LoadBalancerUrl, "products"]]
-#        Listener: !GetAtt ALB.Outputs.Listener
-#        Path: /
-#        ECSServiceAutoScalingRoleARN: !GetAtt ECS.Outputs.ECSServiceAutoScalingRole
 
   serviceSession:
     Type: AWS::CloudFormation::Stack
