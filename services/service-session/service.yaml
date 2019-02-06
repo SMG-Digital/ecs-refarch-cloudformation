@@ -83,9 +83,9 @@ Resources:
             Port: 80
             Protocol: HTTP
             Matcher: 
-                HttpCode: 200-400
+                HttpCode: 200
             HealthCheckIntervalSeconds: 10
-            HealthCheckPath: /
+            HealthCheckPath: /healthcheck
             HealthCheckProtocol: HTTP
             HealthCheckTimeoutSeconds: 5
             HealthyThresholdCount: 2
