@@ -60,7 +60,7 @@ Resources:
                 - Name: !Join ["-",["service-session", !Ref ContainerKey ]]
                   Essential: true
                   Image: !Join [":",["725320927509.dkr.ecr.us-east-1.amazonaws.com/service-session", !Ref ContainerKey ]]
-                  Memory: 138
+                  Memory: 128
                   Cpu: 256
                   PortMappings:
                     - ContainerPort: 8080
