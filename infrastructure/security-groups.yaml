@@ -39,7 +39,8 @@ Resources:
       GroupDescription: Access to the load balancer that sits in front of ECS
       SecurityGroupIngress:
         # Allow access from anywhere to our ECS services
-        - CidrIp: 0.0.0.0/0
+        # modified for Star Block only
+        - CidrIp: 192.206.144.0/21
           IpProtocol: -1
       Tags:
         - Key: Name
